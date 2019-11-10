@@ -61,6 +61,15 @@ public:
 		}
 		cout << endl;
 	}
+
+	T get_head() {
+		return head->value;
+	}
+
+	T get_tail() {
+		return tail->value;
+	}
+
 private:
 	LNode<T> * head;
 	LNode<T> * tail;

@@ -39,8 +39,17 @@ public:
 		if (first != nullptr) {
 			size--;
 			QNode<T>* r = first;
+			T val = r->value;
 			first = first->prev;
-			return r->value;
+			delete r;
+			return val;
+		}
+		return NULL;
+	}
+
+	T peek() {
+		if (first != nullptr) {
+			return first->value;
 		}
 		return NULL;
 	}

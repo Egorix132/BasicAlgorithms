@@ -29,10 +29,20 @@ public:
 
 	T pop() {
 		if (top != nullptr) {
-			T r = (*top).value;
+			Node<T> *r = top;
+			T val = r->value;
 			top = top->next;
-			return r;
+			delete r;
+			return val;
 		}
 		return NULL;
 	}
+
+	T peek() {
+		if (top != nullptr) {
+			return top->value;
+		}
+		return NULL;
+	}
+
 };
